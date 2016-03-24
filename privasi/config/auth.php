@@ -45,6 +45,21 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+        'doctor' =>  [
+        'driver'   => 'session',
+        'provider' => 'doctor',
+        ],
+     
+        'patient' =>  [
+            'driver'   => 'session',
+            'provider' => 'patient',
+        ],
+     
+        'staff' =>  [
+            'driver'   => 'session',
+            'provider' => 'staff',
+        ],
+
     ],
 
     /*
@@ -68,6 +83,21 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+
+        'doctor' =>  [
+        'driver' => 'eloquent',
+        'model'  => App\Doctor::class,
+        ],
+     
+        'patient' =>  [
+            'driver' => 'eloquent',
+            'model'  => App\Patient::class,
+        ],
+     
+        'staff' =>  [
+            'driver' => 'eloquent',
+            'model'  => App\Staff::class,
         ],
 
         // 'users' => [

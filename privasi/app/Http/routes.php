@@ -206,5 +206,36 @@ return view('pagination')->with(array('data' => $article));
 
 });
 
+Route::get('date',function(){
 
+	return view('datetimepicker');
+});
+
+
+Route::get('/login', function() {
+ 
+    $auth = auth('doctor'); // Atau \Auth::guard('doctor')
+ 
+    $credentials = [
+        'username' =>  'asdan15', 
+        'password' =>  Hash::make('asep'),
+    ];
+ 
+    if ($auth->attempt(array('email'=>'dadanasep74@gmail.com','password' => Hash::make('asep')))) {
+        return 'Yay! Berhasil login (^o^)/';
+    }
+ 
+    return 'Gagal login.';
+ 
+});
+
+
+
+
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
 });

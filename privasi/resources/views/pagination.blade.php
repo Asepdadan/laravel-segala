@@ -17,12 +17,14 @@
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
 
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.min">
+
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
- 		<script src="Hello World"></script>
+ 		<script type="text/javascript" src="assets/js/bootstrap-datetimepicker.min"></script>
 
 
  		 <style>
@@ -63,8 +65,6 @@
   }
 </script> 
 	</head>
-	<body oncontextmenu="return false">
-		
 
 
 		<div class="table-responsive">
