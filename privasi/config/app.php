@@ -207,6 +207,7 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Input'     => Illuminate\Support\Facades\Input::class,
         'Excel'     => Maatwebsite\Excel\Facades\Excel::class,
+        'AsepHelper' => App\Helpers\AsepHelper::class,
     ],
 
 ];

@@ -1,12 +1,15 @@
 <?php
 
-
+Route::get('Helper','Crud@Helper');
 
 Route::group(['middleware' => ['web']], function () {
     //
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
 
 Route::get('/home', 'Crud@index');
 
@@ -156,9 +159,7 @@ Excel::create('article', function($excel) use($data) {
 		$sheet->setAutoSize(true);
        
 
-		$sheet->setFontSize(12);
-
-		
+		$sheet->setFontSize(12);	
 
         $sheet->row(4, array(
 		     'no', 'title', 'body'
@@ -232,10 +233,8 @@ Route::get('/login', function() {
 
 
 
+
+
+
 });
 
-Route::group(['middleware' => 'web'], function () {
-    Route::auth();
-
-    Route::get('/home', 'HomeController@index');
-});
