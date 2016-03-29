@@ -1,5 +1,16 @@
 <?php
 
+
+Route::get('TestHelper',function(){
+
+$data = AsepHelper::CountArticle();
+print_r($data);
+
+
+		
+
+});
+
 Route::get('Helper','Crud@Helper');
 
 Route::group(['middleware' => ['web']], function () {

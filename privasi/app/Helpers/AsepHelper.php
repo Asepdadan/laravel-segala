@@ -28,6 +28,14 @@ public static function Helperquery($id=''){
 	return $str;
 }
 
+public static function CountArticle($id=''){
+
+	//$str =  DB::select('select count(*) from articles');
+	$count = DB::table('articles')->count();
+	//return $str;
+	return $count;
+}
+
 
 }
 
