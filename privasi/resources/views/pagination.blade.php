@@ -26,6 +26,27 @@
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
  		<script type="text/javascript" src="assets/js/bootstrap-datetimepicker.min"></script>
 
+{{-- editor --}}
+
+ 		<script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+  <script>
+  tinymce.init({
+  selector: 'textarea',
+  height: 500,
+  plugins: [
+    'advlist autolink lists link image charmap print preview anchor',
+    'searchreplace visualblocks code fullscreen',
+    'insertdatetime media table contextmenu paste code'
+  ],
+  toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+  content_css: [
+    '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
+    '//www.tinymce.com/css/codepen.min.css'
+  ]
+});
+
+  </script>
+{{-- editor --}}
 
  		 <style>
   body {
@@ -64,6 +85,51 @@
     }
   }
 </script> 
+
+{{-- plus minus tombol --}}
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+    // This button will increment the value
+    $('.qtyplus').click(function(e){
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // Get its current value
+        var currentVal = parseInt($('input[name='+fieldName+']').val());
+        // If is not undefined
+        if (!isNaN(currentVal)) {
+            // Increment
+            $('input[name='+fieldName+']').val(currentVal + 1);
+        } else {
+            // Otherwise put a 0 there
+            $('input[name='+fieldName+']').val(0);
+        }
+    });
+    // This button will decrement the value till 0
+    $(".qtyminus").click(function(e) {
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // Get its current value
+        var currentVal = parseInt($('input[name='+fieldName+']').val());
+        // If it isn't undefined or its greater than 0
+        if (!isNaN(currentVal) && currentVal > 0) {
+            // Decrement one
+            $('input[name='+fieldName+']').val(currentVal - 1);
+        } else {
+            // Otherwise put a 0 there
+            $('input[name='+fieldName+']').val(0);
+        }
+    });
+});
+
+
+
+</script>
+
+{{-- plus minus tombol --}}
 	</head>
 
 
@@ -108,8 +174,19 @@ $data->nextPageUrl() !!}">Terbaru <span aria-hidden="true">&rarr;</span></a></li
 		
 
 
+<form id='myform' method='POST' action='#'>
+    <input type='button' value='-' class='qtyminus' field='quantity' />
+    <input type='text' name='quantity' value='0' class='qty' size="4" />
+    <input type='button' value='+' class='qtyplus' field='quantity' />
+</form>
+
 <br>
 <br>
+
+
+<form method="post">
+    <textarea id="mytextarea"></textarea>
+  </form>
 
 
 	</body>

@@ -8,8 +8,10 @@ print_r($data);
 
 
 		
-
 });
+
+
+
 
 Route::get('Helper','Crud@Helper');
 
@@ -242,9 +244,16 @@ Route::get('/login', function() {
 });
 
 
+Route::get('cart',function(){
+
+//$cart = Cart::add(array('id' => '293ad', 'name' => 'Product 1', 'qty' => 1, 'price' => 9.99, 'options' => array('size' => 'large')));
 
 
-
+echo Cart::content();echo "<br>";
+echo Cart::total();echo "<br>";
+echo Cart::count(); 
+Cart::destroy();
+});
 
 
 });
