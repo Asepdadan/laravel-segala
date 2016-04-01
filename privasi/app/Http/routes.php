@@ -153,7 +153,14 @@ $data = App\Article::all()->toArray();
 
 Excel::create('article', function($excel) use($data) {
 
-		
+		$excel->sheet('test sheet 1', function($sheet) use($data) { 
+
+		});
+
+
+
+
+
 	
 
     $excel->sheet('asdan', function($sheet) use($data) {
@@ -180,7 +187,6 @@ Excel::create('article', function($excel) use($data) {
 
 
 
-		
 
        
 $no = 5;
@@ -214,7 +220,8 @@ foreach ($data as $key) {
 Route::get('/between',function(){
 
 $article = DB::table('articles')
-                    ->whereBetween('created_at', ['2016-03-12','2016-03-22'] )->paginate(2);
+					
+                    ->whereBetween('id', [10,15] )->paginate(2);
 
 return view('pagination')->with(array('data' => $article));
 

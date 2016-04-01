@@ -171,6 +171,10 @@ $data->nextPageUrl() !!}">Terbaru <span aria-hidden="true">&rarr;</span></a></li
 
  total :{!! $data->total() !!}
  count : {!! $data->count() !!}
+
+
+ {{ date('y-m-d') }}
+ 
 		
 
 
